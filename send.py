@@ -17,7 +17,6 @@ message = 'From: {}\nTo: {}\nSubject: {}\n\n{}'.format(email,
 server = smtp.SMTP_SSL('smtp.yandex.com', 465)
 server.set_debuglevel(1)
 server.ehlo(email)
-server.starttls()
 server.login(email, password)
 server.auth_plain()
 server.sendmail(email, dest_email, message)
